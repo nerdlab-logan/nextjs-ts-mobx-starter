@@ -1,0 +1,21 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["import", { "libraryName": "antd", "style": true }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@": "./src",
+        "@ui": "./src/components/ui/",
+        "@layout": "./src/components/layout/",
+        "@template": "./src/components/templates/",
+        "@core": "./src/core/",
+        "@util": "./src/utils/"
+      }
+    }],
+    ["@babel/plugin-proposal-decorators", {
+      "legacy" : true
+    }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+  ]
+}
