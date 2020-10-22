@@ -1,3 +1,4 @@
+import '@style/tailwind.css'
 import React from 'react'
 import NextApp, { AppInitialProps } from 'next/app'
 
