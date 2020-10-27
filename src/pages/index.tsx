@@ -20,8 +20,20 @@ const IndexPage = observer(() => {
         <div className="text-center">
           <h1 className="text-2xl">카운트</h1>
           <h2 className="text-lg pt-2">{counterStore.counter}</h2>
-          <button onClick={counterStore.increase}>+</button>
-          <button onClick={counterStore.decrease}>-</button>
+          <div className="flex">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+              onClick={counterStore.increase}
+            >
+              +
+            </button>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+              onClick={counterStore.decrease}
+            >
+              -
+            </button>
+          </div>
         </div>
       </div>
     </>

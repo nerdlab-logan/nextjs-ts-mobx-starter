@@ -1,6 +1,7 @@
 {
-  "presets": ["next/babel"],
+  "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
   "plugins": [
+    ["babel-plugin-macros"],
     ["import", { "libraryName": "antd", "style": true }],
     ["module-resolver", {
       "root": ["./src"],

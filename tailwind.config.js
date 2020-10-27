@@ -1,12 +1,10 @@
+// tailwind custom file
+// link: https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
-  },
-  purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {},
+    },
   },
-  variants: {},
   plugins: [],
 }

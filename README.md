@@ -11,6 +11,7 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
 - css
     + tailwind - utility css 프레임워크
     + emotion - css in js 라이브러리
+    + twin.macro - `tailwindcss + emotion`을 편리하게 쓰기위한 라이브러리
 - quality
     + eslint - 일관된 코드 품질 유지를 위한 라이브러리
     + prettier - 코드 포맷터 라이브러리 (코딩 스타일 유지에 편리함)
