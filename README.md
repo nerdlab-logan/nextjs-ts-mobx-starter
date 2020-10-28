@@ -7,7 +7,7 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
     + nextjs - ssr를 하기 위한 react 프레임워크
     + typescript - 자바스크립트의 superset
     + mobx - 상태 관리 프레임워크
-    + axios - http 통신 라이브러리
+    + axios - http 통신 라이브러리    
 - css
     + tailwind - utility css 프레임워크
     + emotion - css in js 라이브러리
