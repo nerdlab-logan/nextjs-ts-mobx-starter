@@ -1,9 +1,9 @@
 import tw, { styled } from 'twin.macro'
 
 export const TemplateWrapper = styled.div`
-  ${tw`flex flex-row`}
+  ${tw`flex flex-col w-full h-full`}
 `
 
-export const CountArea = styled.div`
-  ${tw`w-full justify-center items-center `}
+export const ContentArea = styled.div`
+  ${tw`flex w-full h-full`}
 `

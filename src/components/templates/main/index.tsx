@@ -11,7 +11,7 @@ const MainTemplate = ({ CountComponent }: Props) => {
   return (
     <FullScreenLayout>
       <S.TemplateWrapper>
-        <S.CountArea>{CountComponent}</S.CountArea>
+        <S.ContentArea>{CountComponent}</S.ContentArea>
       </S.TemplateWrapper>
     </FullScreenLayout>
   )
