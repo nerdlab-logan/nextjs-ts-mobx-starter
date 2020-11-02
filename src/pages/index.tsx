@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocalObservable, observer } from 'mobx-react'
 
 import MainTemplate from '@template/main'
-import SingleCounter from '@ui/organims/counter/single-counter'
+import SingleCounter from '@ui/organisms/counter/single-counter'
 
 import CounterStore from '@/stores/counter.store'
 
