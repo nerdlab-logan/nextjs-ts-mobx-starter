@@ -4,7 +4,7 @@ import { useLocalObservable, observer } from 'mobx-react'
 import MainTemplate from '@template/main'
 import SingleCounter from '@ui/organisms/counter/single-counter'
 
-import CounterStore from '@/stores/counter.store'
+import CounterStore from '@/stores/counter/counter.store'
 
 const IndexPage = observer(() => {
   const counterStore = useLocalObservable(() => new CounterStore())

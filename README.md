@@ -2,7 +2,7 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
 제가 생각하는 프로젝트 구조와 컴퍼넌트 작성 방식, 상태 관리 가이드가 있습니다.
 더 좋은 방향이 있으시다면 바꾸어서 사용하셔면 됩니다!
 
-####1. 주요 library
+#### 1. 주요 library
 - core
     + nextjs - ssr를 하기 위한 react 프레임워크
     + typescript - 자바스크립트의 superset
@@ -16,7 +16,7 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
     + eslint - 일관된 코드 품질 유지를 위한 라이브러리
     + prettier - 코드 포맷터 라이브러리 (코딩 스타일 유지에 편리함)
 
-####2. 폴더 구성
+#### 2. 폴더 구성
 ```bash
 .
 ├── .next           # nextjs 빌드 폴더
@@ -59,7 +59,12 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
 │   |   ├── hooks      # 공용으로 사용되는 hook 모음
 │   |   └── library    # 공용으로 사용되는 library 모음
 |   ├── pages    # 라이팅 페이지 구성
-|   ├── stores   # 상태 관리 store(mobx) 
+|   ├── stores   # 상태 관리 store(mobx)
+│   |   ├── xxx  # 스토어 명(비지니스 domain)
+|   |   |   ├── model  # 스토어에 사용되는 domain object
+|   |   |   |   └── xxx.model.ts 
+|   |   |   └── xxx.store.ts
+|   |   └── store.context.ts   # 글로벌 스토어 설정   
 |   ├── styles   # css 설정
 |   └── utils    # 각종 유틸 함수 모음
 ├── .gitignore
@@ -73,13 +78,13 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
 └── README.md
 ```
  
-####3. 네이밍 규칙
+#### 3. 네이밍 규칙
 - 디렉토리명은 복수형으로 작성합니다.
 - `components`, `pages` 폴더 제외하고 폴더 명을 **subfix** 붙여줍니다.
   + 예시) `utils > xxx.util.ts`, `stores > xxx.store.ts`
 - 컴포넌트 작성지 확장자는 `tsx` 입니다.
 
-####4. 아토믹 디자인 컴포넌트 작성 가이드
+#### 4. 아토믹 디자인 컴포넌트 작성 가이드
 - 공통
   + emotion + tailwindcss로 컴퍼넌트 스타일을 작성합니다. 
   + 컴포넌트 작성시 `index.tsx`,`styled.tsx` 두개의 파일로 구성됩니다.
@@ -114,5 +119,22 @@ nextjs(react) + mobx + typescript 의 조합으로 초기 프로젝트 구조 �
   + 폴더 분류 기준은 유형으로 합니다.
     * 예시) button, label, text 등등
 
-####5. mobx 작성 가이드 
-작성 예정
+#### 5. mobx 작성 가이드 
+- 공통 사항
+  + DDD 설계 & 개발 개념을 사용합니다.
+  + domain > sub-domain > domain-model 트리 구조 입니다.
+  + contextApi 사용하여 글로벌 스토어를 만듭니다.
+    * store.context.ts에 작성합니다. 
+- domain
+  + stores 하위 폴더로 구현됩니다.
+  + business domain layer 개념입니다.
+    * 예시) user, post, order 등
+  + 특이사항으로 UI 관련된 도메인이 있을수 있습니다.
+- sub-domain
+  + domain 디렉토리 안에 store(구현체)입니다.
+  + 비지니스 로직을 담당합니다.
+  + 파일은 {domain}.store.ts 또는 {domain}-{role}.store.ts 형식으로 만듭니다.
+- domain-model
+  + state class 또는 entity 라고 보면 됩니다.
+  + domain > model 디렉토리에 위치합니다.
+  + 파일은 {xxx}.model.ts 형식으로 만듭니다.
